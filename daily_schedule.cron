@@ -1,0 +1,10 @@
+# Example Linux/macOS cron entry: run discovery at 13:00 UTC every day.
+# Replace /FULL/PATH with the absolute path to the extracted project and Python.
+# This task only scrapes, reads CRM, and refreshes the pending queue: no CRM writes.
+0 13 * * * cd /FULL/PATH/Bellhaven-Assessment-Complete && /FULL/PATH/.venv/bin/python run_daily.py >> data/daily.log 2>&1
+
+# On Windows, configure Task Scheduler for daily 5:00 a.m. Pacific during PST
+# (6:00 a.m. during PDT for the UTC cron above), or pick your own local time.
+# Program: C:\Full\Path\Bellhaven-Assessment-Complete\.venv\Scripts\python.exe
+# Arguments: run_daily.py
+# Start in: C:\Full\Path\Bellhaven-Assessment-Complete
